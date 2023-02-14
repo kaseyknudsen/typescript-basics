@@ -32,3 +32,27 @@ const book3: Required<Book> = {
   eBook: true,
   readingAge: 18,
 };
+
+const book4: Readonly<Book> = {
+  //you can also use the readonly keyword before an individual property
+  //readonly title: string
+  title: "Harry Potter",
+  author: "JK Rowling",
+  genres: ["fantasy fiction", "high fantasy"],
+  eBook: true,
+  readingAge: 11,
+};
+
+//book4.title = "LOTR" will give us an error because of the Readonly type
+
+type PartialBook = Partial<Book>;
+
+type Books = Record<string, PartialBook[]>;
+
+//record utility type: right side of the object properties must be of type string,
+//and the right side must be of type Book
+const books: Books = {
+  read: [book2],
+  notRead: [book4],
+  wantToRead: [book1],
+};
