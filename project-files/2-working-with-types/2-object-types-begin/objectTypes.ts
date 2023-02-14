@@ -22,17 +22,31 @@ let gameTwo: {
 
 console.log(game.price);
 
-
 type Bike = {
-    brand: string;
-    model: string;
-    price: number;
-}
+  brand: string;
+  model: string;
+  price: number;
+};
 
 let bike: Bike = {
-    brand: 'Canonndale',
-    model: 'Synapse',
-    price: 2900
-}
+  brand: "Canonndale",
+  model: "Synapse",
+  price: 2900,
+};
 
-console.log(bike.brand)
+type Dog = {
+  name: string;
+  breed: string;
+  color: string;
+  "year born": number;
+};
+
+let dog1: Dog = {
+  name: "Murphy",
+  breed: "Labradoodle",
+  color: "red/blonde",
+  "year born": 2017,
+};
+console.log(bike.brand);
+console.log(`My dog's name is ${dog1.name}. Hi is a ${dog1.breed} and his color is ${dog1.color}. He
+was born in ${dog1["year born"]}.`);
