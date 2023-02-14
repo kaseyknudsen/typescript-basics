@@ -29,7 +29,7 @@ type Bike = {
 };
 
 let bike: Bike = {
-  brand: "Canonndale",
+  brand: "Cannondale",
   model: "Synapse",
   price: 2900,
 };
@@ -38,6 +38,7 @@ type Dog = {
   name: string;
   breed: string;
   color: string;
+  size: string[];
   "year born": number;
 };
 
@@ -45,8 +46,9 @@ let dog1: Dog = {
   name: "Murphy",
   breed: "Labradoodle",
   color: "red/blonde",
+  size: ["Small", "Medium", "Large"],
   "year born": 2017,
 };
 console.log(bike.brand);
-console.log(`My dog's name is ${dog1.name}. Hi is a ${dog1.breed} and his color is ${dog1.color}. He
-was born in ${dog1["year born"]}.`);
+console.log(`My dog's name is ${dog1.name}. Hi is a ${dog1.breed}, his color is ${dog1.color}, and
+his size is ${dog1.size[1]}. He was born in ${dog1["year born"]}.`);
