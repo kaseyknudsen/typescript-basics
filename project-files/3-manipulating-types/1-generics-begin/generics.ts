@@ -5,10 +5,19 @@ type Employee = {
 
 type Manager = {
   name: string;
-  manages: Employee;
+  manages: Person<Employee>[];
 };
 
-const tim = {
+//this is a generic. 2nd value in Person object will default to string
+//optional type parameters MUST follow required type parameters
+type Person<PersonType, DateType = string> = {
+  createdAt: DateType;
+  updatedAt: DateType;
+  data: PersonType;
+};
+
+//2nd value will default to string
+const tim: Person<Employee> = {
   createdAt: "01/01/2022",
   updatedAt: "01/01/2022",
   data: {
@@ -17,7 +26,7 @@ const tim = {
   },
 };
 
-const jack = {
+const jack: Person<Employee, string> = {
   createdAt: "01/01/2022",
   updatedAt: "01/01/2022",
   data: {
@@ -26,9 +35,9 @@ const jack = {
   },
 };
 
-const anna = {
-  createdAt: "01/01/2022",
-  updatedAt: "01/01/2022",
+const anna: Person<Manager, Date> = {
+  createdAt: new Date(),
+  updatedAt: new Date(),
   data: {
     name: "Anna",
     manages: [tim, jack],
