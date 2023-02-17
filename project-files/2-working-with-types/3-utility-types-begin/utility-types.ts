@@ -49,7 +49,7 @@ type PartialBook = Partial<Book>;
 
 type Books = Record<string, PartialBook[]>;
 
-//record utility type: right side of the object properties must be of type string,
+//record utility type: left side of the object properties must be of type string,
 //and the right side must be of type Book
 const books: Books = {
   read: [book2],
